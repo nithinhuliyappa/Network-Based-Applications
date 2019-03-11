@@ -1,0 +1,14 @@
+{
+	"items": [
+{"itemCode":"MSITNBAD", "itemName":"Network Based Application Development", "catalogCategory":"MSIT", "description":"This Book present an introduction to concepts, theories, practices, languages, and tools used to develop applications for the World Wide Web.", "rating":"****", "imageURL":"/resources/MSITNBAD.jpg"},
+{"itemCode":"MSITADS", "itemName":"Algos and Data Structures", "catalogCategory":"MSIT", "description":"The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers.","rating":"***", "imageURL":"/resources/MSITADS.jpg"},
+{"itemCode":"MSITAD", "itemName":"Applied Databases", "catalogCategory":"MSIT", "description":"This book offers numerous examples to help you avoid the many pitfalls that entrap new and not-so-new database designers.","rating":"****"  , "imageURL":"/resources/MSITAD.jpg"},
+{"itemCode":"MSEMP", "itemName":"Micro Processors", "catalogCategory":"MSE", "description":"Microprocessor Architecture, Programming and Applications With The 8085 focuses on 8085 microprocessor family to teach the basic concept of programmable devices. ", "rating":"****", "imageURL":"/resources/MSEMP.jpg"},
+{"itemCode":"MSEMC", "itemName":"Micro Controllers", "catalogCategory":"MSE", "description":"This textbook covers the hardware and software features of the 8051 in a systematic manner.Using Assembly language programming in the first six chapters, in Provides readers with an in-depth understanding of the 8051 architecture. ", "rating":"***","imageURL":"/resources/MSEMC.jpg"},
+{"itemCode":"MSEND", "itemName":"Network Design", "catalogCategory":"MSE", "description":"Introductory text for students, Network Administrators, Management Information Systems Engineers, and Engineering Managers.","rating":"*****", "imageURL":"/resources/MSEND.jpg"}
+],
+  "categories":[
+  {"categoryCode":"MSIT","categoryName":"MSIT"},
+  {"categoryCode":"MSE","categoryName":"MSE"}
+]
+}

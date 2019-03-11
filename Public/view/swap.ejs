@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>Swap</title>
+<script src="/resources/ButtonClick.js"></script>
+<% include partials/header %>
+</head>
+<body>
+<header class="branding">
+<% include partials/cmpLogo %>
+</header>
+<nav>
+<% include partials/user-navigation %>
+</nav>
+<main>
+<div>
+<ul class="breadcrumb">
+<li>Home</li>
+<li>Swap Books</li>
+</ul>
+</div>
+<div>
+<h2>Select the Item from the available Swaps</h2>
+<table>
+<% if(otherItems.length) { %>
+<% for (var i=0; i< otherItems.length; i++) { %>
+<th><input type="radio" name="book" value="book"><%= otherItems[i].item %></th>
+<% } %>
+<% } else { %>
+<h2>No Items are available for swapping</h2>
+<% } %>
+</table>
+</div><br>
+<button type="button">Confirm Swap</button>
+</main>
+<aside>
+<nav>
+<% include partials/site-navigation %>
+</nav>
+</aside>
+<% include partials/footer %>
+</body>
+</html>

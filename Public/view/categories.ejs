@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>Categories</title>
+<% include partials/header %>
+</head>
+<body>
+<header class="branding">
+<% include partials/cmpLogo %>
+</header>
+<nav>
+<% include partials/user-navigation %>
+</nav>
+<main>
+<div>
+<ul class="breadcrumb">
+<li>Home</li>
+<li>Categories</li>
+</ul>
+</div>
+<div>
+<% if(catCategory) { %>
+<% var a=0; %>
+<% for (var i=0; i < category.length; i++) { %>
+<% if(category[i].categoryName== catCategory) { %>
+<h2><%= category[i].categoryName %></h2>
+<% a++; %>
+<% } %>
+<% } %>
+<% if(a === 0) { %>
+<h2>No Items available for the given category</h2>
+<% } %>
+<% for(var j=0; j < item.length; j++) { %>
+<% if(catCategory == item[j].catalogCategory) { %>
+<p>
+<a href='<%= "/items?itemCode="+item[j].itemCode %>'><%= item[j].itemName %> </a>
+</P>
+<% } %>
+<% } %>
+<% } else { %>
+<% for(var i=0; i < category.length; i++) { %>
+<h3><%= category[i].categoryName %></h3>
+<% for(var j=0; j < item.length; j++) { %>
+<% if ((category[i].categoryName==item[j].catalogCategory)) { %>
+<p>
+<a href='<%= "/items?itemCode="+item[j].itemCode %>'><%= item[j].itemName %> </a>
+</p>
+<% } %>
+<% } %>
+<% } %>
+<% } %>
+</div>
+</main>
+<aside>
+<nav>
+<% include partials/site-navigation %>
+</nav>
+</aside>
+<footer class="marquee">
+<p>© Swap-B Solutions Pvt. Ltd.</p>
+</footer>
+</body>
+</html>

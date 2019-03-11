@@ -1,0 +1,14 @@
+{
+"user":[
+{"userId":"user1","firstName":"Nithin","lastName":"Huliyappa","emailAddress":"nhuliyap@uncc.com","address1Field":"Graduate Lane 11005 Apt G","address2Field":"Mecklenburg County","city":"Charlotte","state":"North Carolina","zipCode":"28262","country":"United States"},
+{"userId":"user2","firstName":"Vinod","lastName":"Sheshadri","emailAddress":"vsheshad@uncc.com","address1Field":"Graduate Lane 11005 Apt G","address2Field":"Mecklenburg County","city":"Charlotte","state":"North Carolina","zipCode":"28262","country":"United States"}
+],
+"userProfile":[
+{"userId":"user1","userItem":["Network Based Application Development","Algos and Data Structures"]},
+{"userId":"user2","userItem":["Micro Controllers","Micro Processor"]}
+],
+"userItem":[
+  {"userId":"user1","itemCode":"MSITNBAD","item":"Network Based Application Development","rating":"3/5","status":"Available","swapItem":"","swapItemRating":"","swapperRating":""},
+  {"userId":"user1","itemCode":"MSITADS","item":"Algos and Data Structures","rating":"4.5/5","status":"Pending","swapItem":"Applied Databases","swapItemRating":"","swapperRating":""}
+]
+}

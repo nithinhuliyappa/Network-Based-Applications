@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>Items</title>
+<script src="/resources/ButtonClick.js"></script>
+<% include partials/header %>
+</head>
+<body>
+<header class="branding">
+<% include partials/cmpLogo %>
+</header>
+<nav>
+<% include partials/user-navigation %>
+</nav>
+<main>
+<form action='/swap' method="POST">
+<div>
+<ul class="breadcrumb">
+<li>Home</li>
+<li>Categories</li>
+<li>Items</li>
+</ul>
+</div>
+<div>
+<p style="float:right;"><strong><a href="/categories">Back &#8617;</a></strong></p>
+</div>
+<div>
+<% if(use) { %>
+<% var a=0; %>
+<% if(item!=null) { %>
+<img class="itemlogo" src="<%= item.imageURL %>" alt="itemlogo">
+<button type="submit" name="Offer" value="<%= item.itemName %>">Offer &#x2672;</button>
+<button type="button" onclick="myItems()">Rate it &#9733;</button>
+<h2><%= item.itemName %></h2>
+<p><%= item.description %></p>
+<% a++; %>
+<% } %>
+<% if(a === 0) { %>
+<h2 class="writing">Invalid item code</h2>
+<% } %>
+<% } else if(use==null && useritem.status) { %>
+<% if(useritem!=null) { %>
+<img class="itemlogo" src="<%= item.imageURL %>" alt="itemlogo">
+<button type="submit" name="Offer" value="<%= item.itemName %>">Offer &#x2672;</button>
+<button type="button" onclick="myItems()">Rate it &#9733;</button>
+<h2><%= useritem.item %></h2>
+<p><%= item.description %></p>
+<% a++; %>
+<% } %>
+<% if(a === 0) { %>
+<h2 class="writing">Invalid item code</h2>
+<% } %>
+<% } else { %>
+<h2>No data available for the given item code</h2>
+<% } %>
+</div>
+</form>
+</main>
+<aside>
+<nav>
+<% include partials/site-navigation %>
+</nav>
+</aside>
+<% include partials/footer %>
+</body>
+</html>

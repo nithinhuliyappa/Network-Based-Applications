@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>My Items</title>
+<script src="/resources/ButtonClick.js"></script>
+<% include partials/header %>
+</head>
+<body>
+<header class="branding">
+<% include partials/cmpLogo %>
+</header>
+<nav>
+<% include partials/user-navigation %>
+</nav>
+<main>
+<div>
+<ul class="breadcrumb">
+<li>SignIn</li>
+</ul>
+</div>
+<form action="/signin" method="POST">
+<div>
+<br/>
+<br/>
+<label><b>E-Mail</b></label>
+<input type="text" placeholder="Enter Username" name="uname" required />
+<label><b>Password</b></label>
+<input type="password" placeholder="Enter Password" name="psw" required />
+<input type="submit" value="Login" />
+</div>
+<div>
+<p><%= msg %></p>
+</div>
+</form>
+</main>
+<aside>
+<nav>
+<% include partials/site-navigation %>
+</nav>
+</aside>
+<% include partials/footer %>
+</body>
+</html>

@@ -1,0 +1,38 @@
+// Using the db
+use bookswap
+
+//Collection creation
+
+db.createCollection("categories");
+db.createCollection("items");
+db.createCollection("useritem");
+db.createCollection("userprofile");
+db.createCollection("users");
+db.createCollection("offerFeedback");
+db.createCollection("registeredUser");
+
+//Populating values in collection 
+
+db.categories.insertMany([{"categoryCode":"MSIT","categoryName":"MSIT"},{"categoryCode":"MSE","categoryName":"MSE"}]);
+
+db.items.insertMany([{"itemCode":"MSITNBAD", "itemName":"Network Based Application Development", "catalogCategory":"MSIT", "description":"This Book present an introduction to concepts, theories, practices, languages, and tools used to develop applications for the World Wide Web.", "rating":"****", "imageURL":"/resources/MSITNBAD.jpg"},
+{"itemCode":"MSITADS", "itemName":"Algos and Data Structures", "catalogCategory":"MSIT", "description":"The book covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers.","rating":"***", "imageURL":"/resources/MSITADS.jpg"},
+{"itemCode":"MSITAD", "itemName":"Applied Databases", "catalogCategory":"MSIT", "description":"This book offers numerous examples to help you avoid the many pitfalls that entrap new and not-so-new database designers.","rating":"****"  , "imageURL":"/resources/MSITAD.jpg"},
+{"itemCode":"MSEMP", "itemName":"Micro Processors", "catalogCategory":"MSE", "description":"Microprocessor Architecture, Programming and Applications With The 8085 focuses on 8085 microprocessor family to teach the basic concept of programmable devices. ", "rating":"****", "imageURL":"/resources/MSEMP.jpg"},
+{"itemCode":"MSEMC", "itemName":"Micro Controllers", "catalogCategory":"MSE", "description":"This textbook covers the hardware and software features of the 8051 in a systematic manner.Using Assembly language programming in the first six chapters, in Provides readers with an in-depth understanding of the 8051 architecture. ", "rating":"***","imageURL":"/resources/MSEMC.jpg"},
+{"itemCode":"MSEND", "itemName":"Network Design", "catalogCategory":"MSE", "description":"Introductory text for students, Network Administrators, Management Information Systems Engineers, and Engineering Managers.","rating":"*****", "imageURL":"/resources/MSEND.jpg"}]);
+
+db.useritem.insertMany([{"userId":"user1","itemCode":"MSITNBAD","item":"Network Based Application Development","rating":"3/5","status":"Available","swapItem":"","swapItemRating":"","swapperRating":""},
+{"userId":"user1","itemCode":"MSITADS","item":"Algos and Data Structures","rating":"4.5/5","status":"Pending","swapItem":"Applied Databases","swapItemRating":"","swapperRating":""},
+{"userId":"user2","itemCode":"MSITAD","item":"Applied Database","rating":"4.5/5","status":"Available","swapItem":"","swapItemRating":"","swapperRating":""}]);
+
+db.userProfile.insertMany([{"userId":"user1","userItem":["Network Based Application Development","Algos and Data Structures"]},
+{"userId":"user2","userItem":["Micro Controllers","Micro Processor"]}]);
+
+db.users.insertMany([{"userId":"user1","firstName":"Nithin","lastName":"Huliyappa","emailAddress":"nhuliyap@uncc.com","address1Field":"Graduate Lane 11005 Apt G","address2Field":"Mecklenburg County","city":"Charlotte","state":"North Carolina","zipCode":"28262","country":"United States"},
+{"userId":"user2","firstName":"Vinod","lastName":"Sheshadri","emailAddress":"vsheshad@uncc.com","address1Field":"Graduate Lane 11005 Apt G","address2Field":"Mecklenburg County","city":"Charlotte","state":"North Carolina","zipCode":"28262","country":"United States"}]);
+
+db.offerFeedback.insertMany([{offerID:"offer1", userID1:"user1", userID2:"user2", rating:"3.5/5"},
+{offerID:"offer2", userID1:"user1", userID2:"user2", rating:"3.5/5"}]);
+
+db.registeredUser.insertMany({email:"user1@uncc.edu", password:"a$"}, {email:"a@uncc.edu",password:"a"})

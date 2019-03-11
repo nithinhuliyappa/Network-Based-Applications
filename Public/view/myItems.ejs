@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>My Items</title>
+<script src="/resources/ButtonClick.js"></script>
+<% include partials/header %>
+</head>
+<body>
+<header class="branding">
+<% include partials/cmpLogo %>
+</header>
+<nav>
+<% include partials/user-navigation %>
+</nav>
+<main>
+<div>
+<ul class="breadcrumb">
+<li>Home</li>
+<li>My Books</li>
+</ul>
+</div>
+<div>
+<form action="/myItems" method="POST">
+<table style="width:100%">
+<tr>
+<th>Books</th>
+<th>Categories</th>
+<th>My Rating</th>
+<th>Swapped</th>
+<th>Actions<th>
+</tr>
+<% if(check==='1' && userItems!=null) { %>
+<% for(var i=0;i< userItems.length;i++){ %>
+<% for(var j=0; j< itemsCat.length;j++){ %>
+<% var a=0; %>
+<% if (userItems[i].item == itemsCat[j].itemName) { %>
+<% a=j %>
+<% break %>
+<% } %>
+<% } %>
+<tr>
+<td><%= userItems[i].item %></td>
+<td><%= itemsCat[a].catalogCategory %></td>
+<td><%= userItems[i].rating %></td>
+<td><%= userItems[i].status %></td>
+<td>
+<button type="submit" name="update" value='<%= userItems[i].item %>'> Update</button>
+<button type="submit" name="delete" value='<%= userItems[i].item %>'> Delete</button>
+</td>
+</tr>
+<% } %>
+<% }else if(check==='2'){ %>
+<% for(var i=0;i< usercurrentitem.length;i++){ %>
+<tr>
+<td><%= users.getCategoryBasedOnItem(usercurrentitem[i]).itemName %></td>
+<td><%= users.getCategoryBasedOnItem(usercurrentitem[i]).catalogCategory %></td>
+<td><%= users.getSwapItems(user.userId)[i].rating %></td>
+<% if(users.getStatus(usercurrentitem[i])!=='Available'){ %>
+<td>Swapped</td>
+<% } else { %>
+<td><%=users.getStatus(usercurrentitem[i]) %></td>
+<% } %>
+<td>
+<button type="submit" name="update" value='<%= users.getCategoryBasedOnItem(usercurrentitem[i]).itemName %>'> Update</button>
+<button type="submit" name="delete" value='<%= users.getCategoryBasedOnItem(usercurrentitem[i]).itemName %>'> Delete</button>
+</td>
+</tr>
+<% } %>
+<% } else{ %>
+<% for(var i=0;i< usercurrentitem.length;i++){ %>
+<tr>
+<td><%= users.getCategoryBasedOnItem(usercurrentitem[i]).itemName %></td>
+<td><%= users.getCategoryBasedOnItem(usercurrentitem[i]).catalogCategory %></td>
+<td><%= users.getSwapItems(user.userId)[i].rating %></td>
+<% if(users.getStatus(usercurrentitem[i])!=='Available'){ %>
+<td>Available</td>
+<% } else { %>
+<td><%=users.getStatus(usercurrentitem[i]) %></td>
+<% } %>
+<td>
+<button type="submit" name="update" value='<%= users.getCategoryBasedOnItem(usercurrentitem[i]).itemName %>'> Update</button>
+<button type="submit" name="delete" value='<%= users.getCategoryBasedOnItem(usercurrentitem[i]).itemName %>'> Delete</button>
+</td>
+</tr>
+<% } %>
+<% } %>
+</table>
+</form>
+</div>
+<div>
+<p class="legend">Legend: &#x2672; Swap Offer Available &#10004; Already Swapped</p>
+</div>
+</main>
+<aside>
+<nav>
+<% include partials/site-navigation %>
+</nav>
+</aside>
+<% include partials/footer %>
+</body>
+</html>

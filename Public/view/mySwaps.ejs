@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<title>My Swaps</title>
+<script src="/resources/ButtonClick.js"></script>
+<% include partials/header %>
+</head>
+<body>
+<header class="branding">
+<% include partials/cmpLogo %>
+</header>
+<nav>
+<% include partials/user-navigation %>
+</nav>
+<main>
+<div>
+<ul class="breadcrumb">
+<li>Home</li>
+<li>My Books</li>
+</ul>
+</div>
+<div>
+<form action="/myItems" method="POST">
+<% if(usercurrentitem !=='1') { %>
+<table style="width:100%">
+<tr>
+<th>Book</th>
+<th>Swap offer</th>
+<th>Action</th>
+</tr>
+<td><%= usercurrentitem.item %></td>
+<td><%= usercurrentitem.swapItem %></td>
+<td><button type="submit" name="Accept" value='<%=usercurrentitem.item %>'>Accept</button>
+<button type="submit" name="Reject" value='<%=usercurrentitem.item %>'>Reject</button>
+<button type="submit" name="Withdraw" value='<%=usercurrentitem.item %>'>Withdraw</button>
+</td>
+<% } else { %>
+<h3>Please select any of your items from your books</h3>
+<% } %>
+</table>
+</from>
+</div>
+</main>
+<aside>
+<nav>
+<% include partials/site-navigation %>
+</nav>
+</aside>
+<% include partials/footer %>
+</body>
+</html>
